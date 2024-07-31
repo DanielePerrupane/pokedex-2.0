@@ -12,6 +12,7 @@
 		E75117E72C59369B0043F629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75117E62C59369B0043F629 /* Assets.xcassets */; };
 		E75117EA2C59369B0043F629 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75117E92C59369B0043F629 /* Preview Assets.xcassets */; };
 		E75117F12C5936D70043F629 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75117F02C5936D70043F629 /* DetailView.swift */; };
+		E7AC7A202C594A4300853761 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC7A1F2C594A4300853761 /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E75117E62C59369B0043F629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75117E92C59369B0043F629 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E75117F02C5936D70043F629 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E7AC7A1F2C594A4300853761 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				E75117E22C5936990043F629 /* pokedexApp.swift */,
 				E75117F02C5936D70043F629 /* DetailView.swift */,
 				E75117E42C5936990043F629 /* ContentView.swift */,
+				E7AC7A1F2C594A4300853761 /* Pokemon.swift */,
 				E75117E62C59369B0043F629 /* Assets.xcassets */,
 				E75117E82C59369B0043F629 /* Preview Content */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75117E52C5936990043F629 /* ContentView.swift in Sources */,
+				E7AC7A202C594A4300853761 /* Pokemon.swift in Sources */,
 				E75117F12C5936D70043F629 /* DetailView.swift in Sources */,
 				E75117E32C5936990043F629 /* pokedexApp.swift in Sources */,
 			);

@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct DetailView: View {
+    
     var body: some View {
         
         ZStack {
             
+            //PKMN IMAGE
             RoundedRectangle(cornerRadius: 8)
                 .frame(width: 200, height: 200)
             Text("Pokèmon \nImage")
@@ -23,6 +25,8 @@ struct DetailView: View {
         VStack(alignment: .center) {
             
             HStack {
+                
+                //TYPE 1
                 Text("Type 1")
                     .padding(.vertical,5)
                     .padding(.horizontal,15)
@@ -36,6 +40,7 @@ struct DetailView: View {
                         
                     )
                    
+                //TYPE 2
                 Text("Type 2")
                     .padding(.vertical,5)
                     .padding(.horizontal,15)
@@ -53,6 +58,7 @@ struct DetailView: View {
             }
             .padding(.bottom)
             
+            //FLAVOR TEXT
             RoundedRectangle(cornerRadius: 5.0)
                 .frame(width: 100,height: 25)
                 .overlay {
