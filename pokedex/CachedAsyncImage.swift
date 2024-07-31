@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Una classe singleton che gestisce la cache delle immagini utilizzando NSCache
 class ImageCache {
     static let shared = ImageCache()
     private var cache = NSCache<NSURL, UIImage>()
@@ -21,7 +22,9 @@ class ImageCache {
         cache.setObject(image, forKey: url as NSURL)
     }
 }
-
+/*
+Una vista personalizzata che utilizza ImageCache per caricare e memorizzare le immagini. Se l’immagine è già nella cache, viene visualizzata immediatamente. Altrimenti, l’immagine viene scaricata, memorizzata nella cache e poi visualizzata.
+ */
 struct CachedAsyncImage: View {
     let url: URL?
     

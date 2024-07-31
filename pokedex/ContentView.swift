@@ -35,7 +35,7 @@ struct ContentView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(pokemonarray, id: \.id) { pokemon in
                         VStack {
-                            NavigationLink(destination: DetailView(pokemon: Pokemon(id: pokemon.id, name: pokemon.name, sprites: pokemon.sprites, types: pokemon.types, flavorText: pokemon.flavorText)), label: {
+                            NavigationLink(destination: DetailView(pokemon: pokemon), label: {
                                 
                                     CachedAsyncImage(url: URL(string: pokemon.sprites.other.officialArtwork.frontDefault))
                                         .frame(width: 150, height: 150)

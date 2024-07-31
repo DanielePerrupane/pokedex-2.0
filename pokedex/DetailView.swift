@@ -16,77 +16,73 @@ struct DetailView: View {
     var body: some View {
 
         
-        VStack(alignment: .center) {
+        VStack {
             //PKMN IMAGE
             CachedAsyncImage(url: URL(string: (pokemon.sprites.other.officialArtwork.frontDefault)))
-                .frame(width: 150, height: 150)
-                .cornerRadius(10)
+                .frame(width: 250, height: 250)
+                
+            
+            //PKMN NAME
+            Text(pokemon.name.capitalized)
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.bottom,20)
                 
             HStack {
                 
-                //TYPE 1
-                Text("Type 1")
-                    .padding(.vertical,5)
-                    .padding(.horizontal,15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .fill(.clear)
-                            .background(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(.black, lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                            )
-                        
-                    )
-                   
-                //TYPE 2
-                Text("Type 2")
-                    .padding(.vertical,5)
-                    .padding(.horizontal,15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .fill(.clear)
-                            .background(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(.black, lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                            )
-                        
-                    )
-                
-                
+                if (pokemon.types.count == 2) {
+                    
+                    //TYPE 1
+                    Text(pokemon.types[0].type.name.capitalized)
+                        .padding(.vertical,5)
+                        .padding(.horizontal,15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .fill(.clear)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                                )
+                        )
+                       
+                    //TYPE 2
+                    Text(pokemon.types[1].type.name.capitalized)
+                        .padding(.vertical,5)
+                        .padding(.horizontal,15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .fill(.clear)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                                )
+                        )
+                } else {
+                    
+                    //TYPE 1
+                    Text(pokemon.types[0].type.name.capitalized)
+                        .padding(.vertical,5)
+                        .padding(.horizontal,15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .fill(.clear)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                                )
+                        )
+                }
             }
-            .padding(.bottom)
+            .padding(.bottom,20)
+            
             
             //FLAVOR TEXT
-            RoundedRectangle(cornerRadius: 5.0)
-                .frame(width: 100,height: 25)
-                .overlay {
-                    Text("Flavor Text")
-                        .foregroundStyle(.white)
-                }
+            Text(pokemon.flavorText)
+                .font(.subheadline)
+                
             
         }
-        .padding(.top,20)
-        
-        
-            
+        .padding(.bottom,200)
     }
     
-    
-    func configure(with pokemonDetail: Pokemon) {
-        
-        if (pokemonDetail.types.count == 2) {
-            
-            
-            
-            
-        } else {
-            
-            
-            
-        }
-        
-        
-        
-        
-    }
 }

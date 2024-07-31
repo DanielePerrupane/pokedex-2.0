@@ -18,8 +18,8 @@ struct PokemonSpeciesResponse: Codable {
 }
 
 struct TypeSlot: Codable {
-    let slot: Int
-    let type: Types?
+    let slot: Int?
+    let type: Types
 }
 
 struct Types: Codable {
