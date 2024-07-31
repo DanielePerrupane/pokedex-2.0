@@ -9,21 +9,19 @@ import SwiftUI
 
 struct DetailView: View {
     
+    
+    
+    var pokemon: Pokemon
+    
     var body: some View {
+
         
-        ZStack {
-            
-            //PKMN IMAGE
-            RoundedRectangle(cornerRadius: 8)
-                .frame(width: 200, height: 200)
-            Text("Pokèmon \nImage")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.white)
-                .border(Color.black)
-            
-        }
         VStack(alignment: .center) {
-            
+            //PKMN IMAGE
+            CachedAsyncImage(url: URL(string: (pokemon.sprites.other.officialArtwork.frontDefault)))
+                .frame(width: 150, height: 150)
+                .cornerRadius(10)
+                
             HStack {
                 
                 //TYPE 1
@@ -67,12 +65,28 @@ struct DetailView: View {
                 }
             
         }
+        .padding(.top,20)
         
         
             
     }
-}
-
-#Preview {
-    DetailView()
+    
+    
+    func configure(with pokemonDetail: Pokemon) {
+        
+        if (pokemonDetail.types.count == 2) {
+            
+            
+            
+            
+        } else {
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
 }

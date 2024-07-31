@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     
     @State var pokemonarray: [Pokemon] = []
@@ -32,31 +34,17 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(pokemonarray, id: \.id) { pokemon in
-                        NavigationLink(destination: DetailView(), label: {
-                            VStack {
-                               AsyncImage(url: URL(string: pokemon.sprites.other.officialArtwork.frontDefault)) { phase in
-                                   switch phase {
-                                   case .empty:
-                                       ProgressView()
-                                   case .success(let image):
-                                       image
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 150, height: 150)
-                                           .cornerRadius(10)
-                                   case .failure:
-                                       Image(systemName: "xmark.circle")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 150, height: 150)
-                                           .foregroundColor(.red)
-                                   @unknown default:
-                                       EmptyView()
-                                   }
-                               }
-                                Text(pokemon.name.capitalized)
-                            }
-                        })
+                        VStack {
+                            NavigationLink(destination: DetailView(pokemon: Pokemon(id: pokemon.id, name: pokemon.name, sprites: pokemon.sprites, types: pokemon.types, flavorText: pokemon.flavorText)), label: {
+                                
+                                    CachedAsyncImage(url: URL(string: pokemon.sprites.other.officialArtwork.frontDefault))
+                                        .frame(width: 150, height: 150)
+                                        .cornerRadius(10)
+                                    
+                                
+                            })
+                            Text(pokemon.name.capitalized)
+                        }
                         
                     }
                 }
